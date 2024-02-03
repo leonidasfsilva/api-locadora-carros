@@ -37,10 +37,9 @@ RUN pecl install -o -f redis \
 WORKDIR /var/www
 
 # Copy custom configurations PHP
-COPY docker/php/custom.ini /usr/local/etc/php/conf.d/custom.ini
+COPY docker/php/php.ini /usr/local/etc/php/
 
-#Config Xdebug on container Docker
-COPY xdebug.ini "${PHP_INI_DIR}/conf.d/docker-php-ext-xdebug.ini"
+#Install Xdebug on container Docker
 RUN pecl install -o -f xdebug \
     && docker-php-ext-enable xdebug
 

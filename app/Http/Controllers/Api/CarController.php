@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Adapters\ApiAdapter;
 use App\DTO\Cars\CreateCarDTO;
 use App\DTO\Cars\UpdateCarDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestCar;
 use App\Http\Resources\CarResource;
 use App\Services\CarService;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -24,7 +22,6 @@ class CarController extends Controller
      */
     public function index(Request $request)
     {
-        // $supports = Support::paginate();
         $cars = $this->service->paginate(
             page: $request->get('page', 1),
             totalPerPage: $request->get('per_page', 3),
