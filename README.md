@@ -1,5 +1,5 @@
 # API para locadora de carros
-Projeto esboço para locadora de baseado em **[Laravel 10 + Docker + MySQL]**
+Projeto esboço para locadora de veículos baseado em **[Laravel 10 + Docker + MySQL]**
 
 
 ## Configurando o projeto
